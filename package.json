@@ -1,10 +1,22 @@
 {
-    "name": "buscadordecolegiosms",
-    "version": "2.0.0",
-    "dependencies": {
-        "mongoose": "~3.6.11",
-        "express": "^4.7.1",
-        "method-override": "^2.1.2",
-        "body-parser": "^1.5.1"
-    }
+  "name": "buscadordecolegiosms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha test/pruebasUnitarias/**/*.js",
+    "start": "node server.js",
+    "coverage": "babel-istanbul cover _mocha -- --recursive ./test/pruebasUnitarias"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karolineespinoza/buscadordecolegiosms"
+  },
+  "dependencies": {
+    "body-parser": "^1.5.1",
+    "cors": "^2.8.4",
+    "express": "^4.7.1",
+    "method-override": "^2.1.2",
+    "mongoose": "~3.6.11"
+  }
 }
