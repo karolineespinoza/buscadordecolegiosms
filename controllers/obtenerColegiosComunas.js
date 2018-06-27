@@ -3,7 +3,7 @@ var config = require('../config/configBD').get(process.env.NODE_ENV);
 var mensaje;
 var nombreOperacion = "obtenerComunasColegios"; 
 
-const getComunasyColegios = (req, res) => {
+exports.getParams = function(req, res) {
 	try {
 		var params = {
 			host: config.dataBase,
@@ -32,6 +32,4 @@ const getComunasyColegios = (req, res) => {
 		
 		return res.status(500).send(err);
 	}
-};
-
-module.exports = { getComunasyColegios }
+}

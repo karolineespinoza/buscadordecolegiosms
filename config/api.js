@@ -5,8 +5,8 @@ const obtenerColegiosComunas = require('../controllers/obtenerColegiosComunas');
 
 /* Operaciones */
 /*istanbul ignore next*/
-module.exports = function (appOSVT) {
+module.exports = function (app) {
     //OSVT
-    appOSVT.get('/microservicios/osvt/obtenerParametria', (req, res) => { obtenerColegiosComunas(req, res) });
+    app.get('/microservicios/osvt/obtenerParametria',obtenerColegiosComunas.getParams);
     
 };
