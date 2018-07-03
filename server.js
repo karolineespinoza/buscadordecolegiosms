@@ -1,7 +1,7 @@
 'use strict'
 
 const bodyParser = require('body-parser');
-const configuracion = require('./config/configBD').get(process.env.NODE_ENV).server;
+const configuracion = require('./config/config').get(process.env.NODE_ENV).server;
 
 var express = require("express"),
     app = express(),
@@ -14,7 +14,7 @@ var express = require("express"),
     var router = express.Router();
 
     //CONFIG
-    console.log('Ambiente: '+process.env.NODE_ENV);
+    console.log('Ambientesssss: '+process.env.NODE_ENV);
 
     router.get('/', function(req, res) {
         res.send("Hello World!");

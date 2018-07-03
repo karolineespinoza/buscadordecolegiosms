@@ -1,12 +1,12 @@
 /* Configuracion */
-const configuracionServidor = require('./configBD').get(process.env.NODE_ENV).server;
+const configuracionServidor = require('./config').get(process.env.NODE_ENV).server;
 /* Controladores */
-const obtenerColegiosComunas = require('../controllers/obtenerColegiosComunas');
+const obtenerParametria = require('../controllers/obtenerParametria');
 
 /* Operaciones */
 /*istanbul ignore next*/
 module.exports = function (app) {
     //OSVT
-    app.get('/microservicios/osvt/obtenerParametria',obtenerColegiosComunas.getParams);
+    app.get('/microservicios/osvt/obtenerParametria',obtenerParametria.getParams);
     
 };
