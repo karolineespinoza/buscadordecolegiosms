@@ -1,8 +1,8 @@
-FROM risingstack/alpine:3.3-v4.2.6-1.1.3
-
-COPY package.json package.json  
-RUN npm install
-
-# Add your source files
-COPY . .  
-CMD ["npm","start"] 
+FROM node:8.9-alpine
+ENV NODE_ENV production
+WORKDIR /usr/src/app
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+RUN npm install --production --silent && mv node_modules ../
+COPY . .
+EXPOSE 3000
+CMD npm start
